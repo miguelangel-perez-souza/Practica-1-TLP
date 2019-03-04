@@ -53,7 +53,7 @@ public class main {
 		
 		NodoE.IncideDesde.add(AristaEF);NodoE.IncideEn.add(AristaDE);
 		
-		NodoF.IncideEn.add(AristaEF); NodoE.IncideEn.add(AristaSF); NodoF.IncideEn.add(AristaBF);
+		NodoF.IncideEn.add(AristaEF); NodoF.IncideEn.add(AristaSF); NodoF.IncideEn.add(AristaBF);
 		
 		//----------------------------------------------------------------------------------Grafo automata 1
 		
@@ -104,7 +104,7 @@ public class main {
 		
 		//-------------------------------------------------------------------------------------Asociar aristas y nodos automata 2
 		
-		NodoP0.IncideDesde.add(AristaP0_P0); NodoP0.IncideDesde.add(AristaP0_P1); NodoP0.IncideEn.add(AristaP3_P0); NodoP0.IncideEn.add(AristaP1_P0);
+		NodoP0.IncideDesde.add(AristaP0_P0); NodoP0.IncideDesde.add(AristaP0_P1); NodoP0.IncideEn.add(AristaP3_P0); NodoP0.IncideEn.add(AristaP1_P0);NodoP0.IncideEn.add(AristaP0_P0);
 		
 		NodoP1.IncideDesde.add(AristaP1_P0); NodoP1.IncideDesde.add(AristaP1_P2); NodoP1.IncideEn.add(AristaP0_P1);
 		
@@ -112,7 +112,7 @@ public class main {
 		
 		NodoP3.IncideDesde.add(AristaP3_P4); NodoP3.IncideDesde.add(AristaP3_P0); NodoP3.IncideEn.add(AristaP2_P3);
 		
-		NodoP4.IncideDesde.add(AristaP4_P4); NodoP4.IncideDesde.add(AristaP4_P5); NodoP4.IncideEn.add(AristaP5_P4); NodoP4.IncideEn.add(AristaP4_P4);
+		NodoP4.IncideDesde.add(AristaP4_P4); NodoP4.IncideDesde.add(AristaP4_P5); NodoP4.IncideEn.add(AristaP5_P4); NodoP4.IncideEn.add(AristaP4_P4); NodoP4.IncideEn.add(AristaP3_P4);
 		
 		NodoP5.IncideDesde.add(AristaP5_P4); NodoP5.IncideDesde.add(AristaP5_P6); NodoP5.IncideEn.add(AristaP4_P5);
 		

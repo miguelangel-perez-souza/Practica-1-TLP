@@ -37,10 +37,7 @@ public class Grafo {
 		Grafo Inverso=this;
 		int count=0;
 		ArrayList <Nodo> eIniciales= new ArrayList<Nodo>();
-		
 		for (Nodo e: Inverso.Nodos) {
-			
-			System.out.println("Nodo: "+ e.Valor);
 			if(e.iseInicial()==true) {
 				e.seteInicial(false);
 				e.seteFinal(true);
@@ -54,26 +51,24 @@ public class Grafo {
 			ArrayList<Arista> InvIncideEn= new ArrayList<Arista>();
 			if (e.IncideDesde.size()>0) {
 				for(Arista a: e.IncideDesde) {
-					System.out.println("Nodo Incide Desde1: " + a.IncideDesde.Valor + " Nodo Incide En1: " + a.IncideEn.Valor);
-					Nodo aux= a.IncideDesde;
-					a.IncideDesde=a.IncideEn;
-					a.IncideEn=aux;
-					System.out.println("Nodo Incide Desde2: " + a.IncideDesde.Valor + " Nodo Incide En2: " + a.IncideEn.Valor);
+					if(a.getIncideDesde()==e){
+						Nodo aux= a.IncideDesde;
+						a.IncideDesde=a.IncideEn;
+						a.IncideEn=aux;
+					}
 					InvIncideEn.add(a);
 				}
 			}
-			System.out.println("\n\n----------------------------------------------------------");
 			if(e.IncideEn.size()>0) {
 				for(Arista a: e.IncideEn) {
-					System.out.println("Nodo Incide Desde21: " + a.IncideDesde.Valor + " Nodo Incide En1: " + a.IncideEn.Valor);
-					Nodo aux= a.IncideDesde;
-					a.IncideDesde=a.IncideEn;
-					a.IncideEn=aux;
-					System.out.println("Nodo Incide Desde2: " + a.IncideDesde.Valor + " Nodo Incide En2: " + a.IncideEn.Valor);
+					if(a.getIncideEn()==e) {
+						Nodo aux= a.IncideDesde;
+						a.IncideDesde=a.IncideEn;
+						a.IncideEn=aux;
+					}
 					InvIncideDesde.add(a);
 				}
 			}
-			System.out.println("\n\n***********************************************************************************************");
 			e.setIncideDesde(InvIncideDesde);
 			e.setIncideEn(InvIncideEn);
 		}
@@ -83,7 +78,7 @@ public class Grafo {
 		else if (count>1) {
 			Nodo NuevoInicial= new Nodo("NuevoInicial", true, false);
 			for (Nodo a: eIniciales) {
-				Arista NuevaArista=new Arista(NuevoInicial,a);
+				Arista NuevaArista=new Arista(a,NuevoInicial);
 				NuevoInicial.IncideDesde.add(NuevaArista);
 				a.IncideEn.add(NuevaArista);
 			}
